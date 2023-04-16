@@ -65,7 +65,7 @@ async def on_connect():
    acc_id = bot.get_user(int(compte_id))
    avatar_url = acc_id.avatar
    data = {"username": bot.user.name,"pfp_link": str(avatar_url)}
-   r = await requests.post("https://core-client-api.xcoreproject.repl.co/api/notifier", json=data)
+   r = requests.post("https://core-client-api.xcoreproject.repl.co/api/notifier", json=data)
    print(Fore.YELLOW + 'User: ' + Fore.RESET + bot.user.name, end='\n\n')
    print(Style.BRIGHT + Fore.GREEN + "The on_connect event fired successfully, good use!" + Style.RESET_ALL)
 
