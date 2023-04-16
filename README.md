@@ -61,7 +61,7 @@ Core Client makes it easy to manage your account. Maximize your Discord experien
 - Ultra Logger : Message Logger, URL & IMG Saver
 - Server Cloner : Backup + Emote Clone & Embed Copier
 - Account : Anti-Group ,Dmall Friend , Clear all dm's
-- And more !
+- And more.. !
 
 ## :speech_balloon: Support
 
