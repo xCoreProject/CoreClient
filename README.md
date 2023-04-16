@@ -6,9 +6,10 @@
 
 # :computer: Core - Client
 
-[![Rejoindre le serveur Discord](https://img.shields.io/discord/1091700912759771246?color=%237289DA&label=Rejoindre%20le%20serveur&logo=discord&style=for-the-badge)](https://discord.gg/M4DeuABSKz)
-[![Soutenir avec Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-%23FFDD00?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/xyanzu)
-[![Téléchargements](https://img.shields.io/github/downloads/xCoreProject/CoreClient/total?style=for-the-badge&label=Téléchargements)](https://github.com/xCoreProject/CoreClient/releases)
+[![Discord](https://img.shields.io/discord/1091700912759771246?color=%237289DA&label=Rejoindre%20le%20serveur&logo=discord&style=for-the-badge)](https://discord.gg/M4DeuABSKz)
+[![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-%23FFDD00?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/xyanzu)
+[![Download](https://img.shields.io/github/downloads/xCoreProject/CoreClient/total?style=for-the-badge&label=Téléchargements)](https://github.com/xCoreProject/CoreClient/releases)
+[![Views](https://img.shields.io/github/watchers/xCoreProject/CoreClient?label=Vues&logo=github&style=for-the-badge)](https://github.com/xCoreProject/CoreClient/watchers)  
   
 > Core Client is a useful and intuitive Discord selfbot! 
 </div>
