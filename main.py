@@ -1,4 +1,4 @@
-############################################################## M O D U L E S ########################################################################
+############################################################## M O D U L E ########################################################################
 
 import discord
 import sys
@@ -76,9 +76,6 @@ async def on_message(message):
             data = {"embeds": [embed.to_dict()]}
             requests.post(webhooklogs, json=data)
  
-            if not os.path.exists("img"):
-                os.makedirs("img")
-            await attachment.save(f"logs/img/{attachment.filename}")
             with open("logs/url.txt", "a") as f:
                 f.write(attachment.url + "\n")
  
