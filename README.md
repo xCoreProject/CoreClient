@@ -9,7 +9,6 @@
 [![Discord](https://img.shields.io/discord/1091700912759771246?color=%237289DA&label=Rejoindre%20le%20serveur&logo=discord&style=for-the-badge)](https://discord.gg/M4DeuABSKz)
 [![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-%23FFDD00?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/xyanzu)
 [![Download](https://img.shields.io/github/downloads/xCoreProject/CoreClient/total?style=for-the-badge&label=Téléchargements)](https://github.com/xCoreProject/CoreClient/releases)
-[![Views](https://img.shields.io/github/watchers/xCoreProject/CoreClient?label=Vues&logo=github&style=for-the-badge)](https://github.com/xCoreProject/CoreClient/watchers)  
   
 > Core Client is a useful and intuitive Discord selfbot! 
 </div>
@@ -75,3 +74,6 @@ If you would like to support the continued development of this project, you can 
 ## :scroll: Licence
 
 - The Core Client project is distributed under an open license that allows users to use, modify, and distribute it according to the terms of the license. This license guarantees the freedom to use, share and modify the software, while protecting the rights of contributors and respecting applicable intellectual property laws. By using the Core Client project, you agree to abide by the terms of the license and to respect contributors' rights and applicable laws. For more information about the Core Client project license, please refer to the official license documentation included in the project.
+
+
+[![](https://visitcount.itsvg.in/api?id=xCoreProject&icon=5&color=11)](https://visitcount.itsvg.in)
