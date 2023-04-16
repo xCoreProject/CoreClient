@@ -83,158 +83,6 @@ async def main():
 asyncio.run(main())
 
 @bot.event
-async def on_message(message):
-    if message.attachments:
-        for attachment in message.attachments:
-            if message.guild:
-                server_name = message.guild.name
-                channel_name = message.channel.name if isinstance(message.channel, discord.TextChannel) else "Direct Message"
-            else:
-                server_name = "Direct Message"
-                channel_name = "Direct Message"
-                
-            embed = Embed(
-                title="New image",
-                description=
-                f"Posted by: {message.author.name}#{message.author.discriminator} ({message.author.id})\n"
-                f"Posted at: {message.created_at}\n"
-                f"Server: {server_name}\n"
-                f"Channel: {channel_name}",
-                color=0x00ff00)
-            embed.set_image(url=attachment.url)
-            data = {"embeds": [embed.to_dict()]}
-            requests.post(webhooklogs, json=data)
-
-            if not os.path.exists("img"):
-                os.makedirs("img")
-            await attachment.save(f"logs/img/{attachment.filename}")
-            with open("logs/url.txt", "a") as f:
-                f.write(attachment.url + "\n")
-
-    extractor = urlextract.URLExtract()
-    urls = extractor.find_urls(message.content)
-    if urls:
-        for url in urls:
-            if message.guild:
-                server_name = message.guild.name
-                channel_name = message.channel.name if isinstance(message.channel, discord.TextChannel) else "Direct Message"
-            else:
-                server_name = "Direct Message"
-                channel_name = "Direct Message"
-                
-            embed = Embed(
-                title="New URL",
-                description=
-                f"Posted by: {message.author.name}#{message.author.discriminator} ({message.author.id})\n"
-                f"Posted at: {message.created_at}\n"
-                f"Server: {server_name}\n"
-                f"Channel: {channel_name}\n"
-                f"URL: {url}",
-                color=0x00ff00)
-            data = {"embeds": [embed.to_dict()]}
-            requests.post(webhooklogs, json=data)
-
-            with open("logs/url.txt", "a") as f:
-                f.write(url + "\n")
-
-    await bot.process_commands(message)
-
-
-@bot.event
-async def on_message_edit(before, after):
-  if before.content != after.content:
-    embed = Embed(title="Message edited", color=0xFFA500)
-    embed.add_field(name="Before", value=before.content, inline=False)
-    embed.add_field(name="After", value=after.content, inline=False)
-    embed.set_author(
-      name=f"{before.author.name}#{before.author.discriminator}",
-      icon_url=before.author.avatar)
-    embed.set_footer(text=f"Edited at: {after.edited_at}")
-    if before.guild:
-      embed.add_field(name="Server", value=before.guild.name, inline=True)
-      embed.add_field(name="Channel", value=before.channel.name, inline=True)
-    else:
-      embed.add_field(name="Channel", value="DM", inline=True)
-    data = {"embeds": [embed.to_dict()]}
-    requests.post(webhooklogs, json=data)
-
-
-@bot.event
-async def on_message_delete(message):
-  if message.attachments:
-    for attachment in message.attachments:
-      embed = Embed(
-        title="Deleted message",
-        description=f"The deleted message contained an image: {attachment.url}",
-        color=0xFF5733,
-      )
-      embed.set_author(
-        name=
-        f"{message.author.name}#{message.author.discriminator} ({message.author.id})",
-        icon_url=message.author.avatar,
-      )
-      embed.set_footer(text=f"Deleted at: {message.created_at}")
-      if message.guild:
-        embed.add_field(name="Server", value=message.guild.name, inline=True)
-        embed.add_field(name="Channel",
-                        value=message.channel.name,
-                        inline=True)
-      else:
-        embed.add_field(name="Server", value="DM", inline=True)
-
-      payload = {"embeds": [embed.to_dict()]}
-
-      headers = {"Content-Type": "application/json"}
-
-      requests.post(webhooklogs, data=json.dumps(payload), headers=headers)
-  elif message.content:
-    embed = Embed(
-      title="Deleted message",
-      description=f"The deleted message was: {message.content}",
-      color=0xFF5733,
-    )
-    embed.set_author(
-      name=
-      f"{message.author.name}#{message.author.discriminator} ({message.author.id})",
-      icon_url=message.author.avatar,
-    )
-    embed.set_footer(text=f"Deleted at: {message.created_at}")
-    if message.guild:
-      embed.add_field(name="Server", value=message.guild.name, inline=True)
-      embed.add_field(name="Channel", value=message.channel.name, inline=True)
-    else:
-      embed.add_field(name="Server", value="DM", inline=True)
-
-    payload = {"embeds": [embed.to_dict()]}
-
-    headers = {"Content-Type": "application/json"}
-
-    requests.post(webhooklogs, data=json.dumps(payload), headers=headers)
-  else:
-    embed = Embed(
-      title="Deleted message",
-      description="The deleted message contained no text or attachments.",
-      color=0xFF5733,
-    )
-    embed.set_author(
-      name=
-      f"{message.author.name}#{message.author.discriminator} ({message.author.id})",
-      icon_url=message.author.avatar,
-    )
-    embed.set_footer(text=f"Deleted at: {message.created_at}")
-    if message.guild:
-      embed.add_field(name="Server", value=message.guild.name, inline=True)
-      embed.add_field(name="Channel", value=message.channel.name, inline=True)
-    else:
-      embed.add_field(name="Server", value="DM", inline=True)
-
-    payload = {"embeds": [embed.to_dict()]}
-
-    headers = {"Content-Type": "application/json"}
-
-    requests.post(webhooklogs, data=json.dumps(payload), headers=headers)
-
-@bot.event
 async def on_command_error(ctx, error):
   if isinstance(error, commands.CommandNotFound):
     await ctx.send("Command not found. Please check the syntax.")
@@ -242,38 +90,7 @@ async def on_command_error(ctx, error):
 ############################################################## C O M M A N D S ####################################################################
 
 ############################################################## S T A T U S ########################################################################
-@bot.command()
-async def rpc(ctx):
-    await ctx.message.delete()
 
-    os_name = platform.system()
-
-    if os_name == "Linux":
-        os.chdir(os.path.join(os.getcwd(), "others"))
-        os.system('gnome-terminal -- bash -c "node script.js; exec bash"')
-    elif os_name == "Windows":
-        os.chdir(os.path.join(os.getcwd(), "others"))
-        os.system('cmd /c "node script.js && pause"')
-    elif os_name == "Darwin":
-        os.chdir(os.path.join(os.getcwd(), "others"))
-        os.system('open -a Terminal.app node script.js')
-    else:
-        await ctx.send("Votre système d'exploitation n'est pas pris en charge.")
-
-    await ctx.send("RPC ON")
-
-@bot.command()
-async def rpcoff(ctx):
-    await ctx.message.delete()
-    current_dir = os.getcwd()
-    for process in psutil.process_iter():
-        try:
-            if process.name() == "node" and current_dir in process.cwd():
-                process.kill()
-        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
-            pass
-    await ctx.send("RPC OFF")
-    
 @bot.command(aliases=["streaming", "game", "listen", "watch"])
 async def setactivity(ctx, act_type: str, *, message: str):
     await ctx.message.delete()
@@ -361,8 +178,7 @@ async def status(ctx):
 
 **Prefix : &**
 
-`rpc` => `Load RPC`
-`rpcoff` => `Stop RPC`
+||RPC SOON ON V2||
 
 `setactivity {args} [message]` => `Load custom status`
 `[+]`  `&setactivity streaming Core Self`
