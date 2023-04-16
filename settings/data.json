@@ -1,0 +1,7 @@
+{
+  "token": "account token",
+  "webhookerror": "error webhook url",
+  "webhooklogs": "logging webhook url",
+  "salon_id": "webhook channel id",
+  "compte_id": "account id here"
+}
