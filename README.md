@@ -33,7 +33,7 @@
 
     Make sure you have Python 3 installed on your system.
     Run the setup file for the proper functioning of the selfbot.
-    Write this command to install the modules: pip install requirements.txt
+    Write this command to install the modules: pip install -r requirements.txt
     Configure the data.json file located in the settings folder.
     Run python3 main.py to launch the main.py file.
 
