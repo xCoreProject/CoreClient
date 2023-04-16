@@ -164,7 +164,7 @@ async def on_message_delete(message):
     embed.set_author(
       name=
       f"{message.author.name}#{message.author.discriminator} ({message.author.id})",
-      icon_url=message.author.avatar_url,
+      icon_url=message.author.avatar,
     )
     embed.set_footer(text=f"Deleted at: {message.created_at}")
     if message.guild:
