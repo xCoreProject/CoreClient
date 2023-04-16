@@ -76,4 +76,4 @@ If you would like to support the continued development of this project, you can 
 - The Core Client project is distributed under an open license that allows users to use, modify, and distribute it according to the terms of the license. This license guarantees the freedom to use, share and modify the software, while protecting the rights of contributors and respecting applicable intellectual property laws. By using the Core Client project, you agree to abide by the terms of the license and to respect contributors' rights and applicable laws. For more information about the Core Client project license, please refer to the official license documentation included in the project.
 
 
-[![](https://visitcount.itsvg.in/api?id=xCoreProject&icon=5&color=11)](https://visitcount.itsvg.in)
+[![](https://visitcount.itsvg.in/api?id=xCoreProject/CoreClient&icon=5&color=11)](https://visitcount.itsvg.in)
