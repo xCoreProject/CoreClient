@@ -4,7 +4,7 @@
 
 <div align="center">
 
-# :computer: Core Client
+# :computer: Core - Client
 
 [![Rejoindre le serveur Discord](https://img.shields.io/discord/1091700912759771246?color=%237289DA&label=Rejoindre%20le%20serveur&logo=discord&style=for-the-badge)](https://discord.gg/M4DeuABSKz)
 [![Soutenir avec Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-%23FFDD00?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/xyanzu)
