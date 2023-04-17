@@ -787,10 +787,12 @@ async def guildscrap(ctx):
     await ctx.message.delete()
     try:
         if not ctx.guild.icon:
+            print(ctx.guild.icon)
             await ctx.send(f"**{ctx.guild.name}** has no icon")
         else:
             await ctx.send(f"Guild Icon : {ctx.guild.icon}")
         if not ctx.guild.banner:
+            print(ctx.guild.banner)
             await ctx.send(f"**{ctx.guild.name}** has no banner")
         else:
             await ctx.send(f"Guild Banne : {ctx.guild.banner}")
