@@ -116,7 +116,7 @@ async def on_message_edit(before, after):
     embed.add_field(name="After", value=after.content, inline=False)
     embed.set_author(
       name=f"{before.author.name}#{before.author.discriminator}",
-      icon_url=before.author.avatar_url)
+      icon_url=before.author.avatar)
     embed.set_footer(text=f"Edited at: {after.edited_at}")
     if before.guild:
       embed.add_field(name="Server", value=before.guild.name, inline=True)
@@ -139,7 +139,7 @@ async def on_message_delete(message):
       embed.set_author(
         name=
         f"{message.author.name}#{message.author.discriminator} ({message.author.id})",
-        icon_url=message.author.avatar_url,
+        icon_url=message.author.avatar,
       )
       embed.set_footer(text=f"Deleted at: {message.created_at}")
       if message.guild:
@@ -187,7 +187,7 @@ async def on_message_delete(message):
     embed.set_author(
       name=
       f"{message.author.name}#{message.author.discriminator} ({message.author.id})",
-      icon_url=message.author.avatar_url,
+      icon_url=message.author.avatar,
     )
     embed.set_footer(text=f"Deleted at: {message.created_at}")
     if message.guild:
