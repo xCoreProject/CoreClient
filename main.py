@@ -356,7 +356,7 @@ async def guild(ctx):
     help_text = '''>>> `=================== G U I L D ㊍ ====================`
 ☆, .- ~ * '¨¯¨' * · ~ -.¸--, .- ~ * '¨¯¨' * · ~ -.¸ ☆
 
-**Prefix : &**
+**Prefix : &**  
 
 `copy` => `Makes a copy of the server where the command was made`
 `emoteclone {id1} [id2]` => `Clone emojis from a server`
@@ -761,7 +761,7 @@ async def copy(ctx):
                                     await new_chan.set_permissions(new_role, overwrite=perm)
                         print(f'Text Channel {chann.name} ({chann.id}) created in category {x.name} ({x.id}) from the new save guild')
     try:
-        icon = await ctx.guild.icon_url.read()
+        icon = await ctx.guild.icon.read()
         await g.edit(icon=icon)
         print('New updated save guild icon')
     except Exception as e:
@@ -786,10 +786,10 @@ async def massmention(ctx, *, message=None):
 async def guildscrap(ctx):
     await ctx.message.delete()
     try:
-        if not ctx.guild.icon_url:
+        if not ctx.guild.icon:
             await ctx.send(f"**{ctx.guild.name}** has no icon")
         else:
-            await ctx.send(f"Guild Icon : {ctx.guild.icon_url}")
+            await ctx.send(f"Guild Icon : {ctx.guild.icon}")
         if not ctx.guild.banner_url:
             await ctx.send(f"**{ctx.guild.name}** has no banner")
         else:
