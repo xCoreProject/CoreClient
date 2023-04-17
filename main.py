@@ -790,10 +790,10 @@ async def guildscrap(ctx):
             await ctx.send(f"**{ctx.guild.name}** has no icon")
         else:
             await ctx.send(f"Guild Icon : {ctx.guild.icon}")
-        if not ctx.guild.banner_url:
+        if not ctx.guild.banner:
             await ctx.send(f"**{ctx.guild.name}** has no banner")
         else:
-            await ctx.send(f"Guild Banne : {ctx.guild.banner_url}")
+            await ctx.send(f"Guild Banne : {ctx.guild.banner}")
     except Exception as e:
         print(f"[ERROR] An error occurred while executing the guildscrap command : {e}")
         await ctx.send(f"[ERROR] An error occurred while executing the guildscrap command : {e}")
